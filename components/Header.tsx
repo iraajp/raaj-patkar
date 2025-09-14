@@ -5,12 +5,12 @@ import { Icon } from './Icon';
 interface HeaderProps {
   user: User;
   onLogout: () => void;
-  onNewPresentation: () => void;
+  onGoToDashboard: () => void;
   onExport: () => void;
   isExporting: boolean;
 }
 
-export const Header: React.FC<HeaderProps> = ({ user, onLogout, onNewPresentation, onExport, isExporting }) => {
+export const Header: React.FC<HeaderProps> = ({ user, onLogout, onGoToDashboard, onExport, isExporting }) => {
   return (
     <header className="w-full bg-gray-950 p-4 border-b border-gray-800 flex justify-between items-center animate-fade-in">
       <div className="flex items-center gap-3">
@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ user, onLogout, onNewPresentatio
       </div>
       <div className="flex items-center gap-4">
         <button 
-          onClick={onNewPresentation}
+          onClick={onGoToDashboard}
           className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-gray-950">
           <Icon name="new" className="w-5 h-5" />
           New
